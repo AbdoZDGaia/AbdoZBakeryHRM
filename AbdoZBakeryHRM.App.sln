@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbdoZBakeryHRM.App", "AbdoZBakeryHRM.App\AbdoZBakeryHRM.App.csproj", "{2E761110-15FF-481D-97D3-D123DAB48D3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbdoZBakeryHRM.Shared", "AbdoZBakeryHRM.Shared\AbdoZBakeryHRM.Shared.csproj", "{CEB61911-6778-4220-BDC5-C966D7293EBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E761110-15FF-481D-97D3-D123DAB48D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E761110-15FF-481D-97D3-D123DAB48D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E761110-15FF-481D-97D3-D123DAB48D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E761110-15FF-481D-97D3-D123DAB48D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB61911-6778-4220-BDC5-C966D7293EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB61911-6778-4220-BDC5-C966D7293EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB61911-6778-4220-BDC5-C966D7293EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB61911-6778-4220-BDC5-C966D7293EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF8FB50A-85ED-49A0-A7A6-7605361CD683}
+	EndGlobalSection
+EndGlobal
