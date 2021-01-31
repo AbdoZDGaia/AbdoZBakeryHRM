@@ -1,4 +1,5 @@
 ﻿using AbdoZBakeryHRM.Shared;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,19 @@ namespace AbdoZBakeryHRM.App.Pages
 {
     public partial class EmployeeDetail
     {
+        [Parameter]
+        public string EmployeeId { get; set; }
+        public Employee Employee { get; set; } = new Employee();
+        public string EmployeeFullName { get; set; }
+
         protected override Task OnInitializedAsync()
         {
 
             InitializeCountries();
             InitializeJobCategories();
             InitializeEmployees();
+            Employee = Employees.FirstOrDefault(e => e.EmployeeId == int.Parse(EmployeeId));
+            EmployeeFullName = $"{ Employee.FirstName} {Employee.LastName}";
 
             return base.OnInitializedAsync();
         }
