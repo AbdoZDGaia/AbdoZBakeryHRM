@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbdoZBakeryHRM.App", "AbdoZBakeryHRM.App\AbdoZBakeryHRM.App.csproj", "{2E761110-15FF-481D-97D3-D123DAB48D3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZBakeryHRM.App", "AbdoZBakeryHRM.App\AbdoZBakeryHRM.App.csproj", "{2E761110-15FF-481D-97D3-D123DAB48D3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbdoZBakeryHRM.Shared", "AbdoZBakeryHRM.Shared\AbdoZBakeryHRM.Shared.csproj", "{CEB61911-6778-4220-BDC5-C966D7293EBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZBakeryHRM.Shared", "AbdoZBakeryHRM.Shared\AbdoZBakeryHRM.Shared.csproj", "{CEB61911-6778-4220-BDC5-C966D7293EBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZBakeryHRM.Api", "AbdoZBakeryHRM.Api\AbdoZBakeryHRM.Api.csproj", "{3F957FE6-CFE4-4CBF-867A-BF58A8B97C7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CEB61911-6778-4220-BDC5-C966D7293EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEB61911-6778-4220-BDC5-C966D7293EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEB61911-6778-4220-BDC5-C966D7293EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F957FE6-CFE4-4CBF-867A-BF58A8B97C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F957FE6-CFE4-4CBF-867A-BF58A8B97C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F957FE6-CFE4-4CBF-867A-BF58A8B97C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F957FE6-CFE4-4CBF-867A-BF58A8B97C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
