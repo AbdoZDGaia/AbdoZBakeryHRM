@@ -1,0 +1,40 @@
+﻿using AbdoZBakeryHRM.App.Services;
+using AbdoZBakeryHRM.Shared;
+using Microsoft.AspNetCore.Components;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace AbdoZBakeryHRM.App.Components
+{
+    public partial class AddEmployeeDialog
+    {
+        public Employee Employee { get; set; } = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+        [Inject]
+        public IEmployeeDataService service { get; set; }
+        public bool ShowDialog { get; set; }
+        [Parameter]
+        public EventCallback<bool> CloseEventCallback { get; set; }
+
+        public void Show()
+        {
+            ResetDialog();
+            ShowDialog = true;
+            StateHasChanged();
+        }
+
+        public void ResetDialog()
+        {
+            Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+        }
+
+        public async Task HandleValidSubmit()
+        {
+            await service.AddEmployee(Employee);
+            ShowDialog = false;
+            await CloseEventCallback.InvokeAsync(true);
+            StateHasChanged();
+        }
+    }
+}

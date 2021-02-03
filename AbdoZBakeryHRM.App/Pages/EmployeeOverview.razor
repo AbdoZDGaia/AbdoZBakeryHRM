@@ -28,7 +28,10 @@ else
                     <td>@emp.LastName</td>
                     <td>
                         <a href="@($"employeedetail/{emp.EmployeeId}")" class="btn btn-primary table-btn">
-                            <i class="fa fa-info-circle fa-2x"></i>
+                            <i class="fa fa-info-circle"></i>
+                        </a>
+                        <a href="@($"employeeedit/{emp.EmployeeId}")" class="btn btn-primary table-btn">
+                            <i class="fa fa-edit"></i>
                         </a>
                     </td>
                 </tr>
@@ -36,3 +39,6 @@ else
         </tbody>
     </table>
 }
+
+<button @onclick="QuickAddEmployee" class="btn btn-dark table-btn quick-add-btn">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
+<AddEmployeeDialog @ref="AddEmployeeDialog" CloseEventCallback="AddEmployeeDialog_onDialogClose"></AddEmployeeDialog>

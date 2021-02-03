@@ -13,7 +13,6 @@ namespace AbdoZBakeryHRM.App.Pages
         [Parameter]
         public string EmployeeId { get; set; }
         public Employee Employee { get; set; } = new Employee();
-        public string EmployeeFullName { get; set; }
 
         [Inject]
         public IEmployeeDataService service { get; set; }
@@ -21,7 +20,6 @@ namespace AbdoZBakeryHRM.App.Pages
         protected async override Task OnInitializedAsync()
         {
             Employee = await service.GetEmployeeDetails(int.Parse(EmployeeId));
-            EmployeeFullName = $"{ Employee.FirstName} {Employee.LastName}";
         }
 
         public IEnumerable<Employee> Employees { get; set; }

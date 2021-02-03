@@ -1,4 +1,5 @@
-﻿using AbdoZBakeryHRM.App.Services;
+﻿using AbdoZBakeryHRM.App.Components;
+using AbdoZBakeryHRM.App.Services;
 using AbdoZBakeryHRM.Shared;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -23,6 +24,7 @@ namespace AbdoZBakeryHRM.App.Pages
         //{
         //    _service = service;
         //}
+        protected AddEmployeeDialog AddEmployeeDialog { get; set; }
 
         [Inject]
         public IEmployeeDataService service { get; set; }
@@ -33,6 +35,15 @@ namespace AbdoZBakeryHRM.App.Pages
             Employees = (await service.GetAllEmployees()).ToList();
         }
 
+        protected void QuickAddEmployee()
+        {
+            AddEmployeeDialog.Show();
+        }
 
+        protected async void AddEmployeeDialog_onDialogClose()
+        {
+            Employees = (await service.GetAllEmployees()).ToList();
+            StateHasChanged();
+        }
     }
 }
