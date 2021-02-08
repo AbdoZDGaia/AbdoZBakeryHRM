@@ -1,4 +1,4 @@
-﻿namespace AbdoZBakeryHRM.ComponentsLibrary.Map
+﻿namespace AbdoZBakeryHRM.Shared
 {
     public class Marker
     {

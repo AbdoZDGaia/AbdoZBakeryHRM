@@ -76,7 +76,7 @@ namespace AbdoZBakeryHRM.App.Pages
 
             if (Employee.EmployeeId == 0) //new
             {
-                if (selectedFiles!= null)
+                if (selectedFiles != null)
                 {
                     var file = selectedFiles[0];
                     Stream stream = file.OpenReadStream();

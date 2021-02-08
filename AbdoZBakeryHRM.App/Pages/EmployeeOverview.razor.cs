@@ -13,17 +13,9 @@ namespace AbdoZBakeryHRM.App.Pages
 {
     public partial class EmployeeOverview
     {
-        private readonly EmployeeDataService _service;
 
         public IEnumerable<Employee> Employees { get; set; }
 
-        //[Inject]
-        //public HttpClient HttpClient { get; set; }
-
-        //public EmployeeOverview(EmployeeDataService service)
-        //{
-        //    _service = service;
-        //}
         protected AddEmployeeDialog AddEmployeeDialog { get; set; }
 
         [Inject]

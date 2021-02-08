@@ -14,7 +14,7 @@
     <ProjectReference Include="..\AbdoZBakeryHRM.App\AbdoZBakeryHRM.App.csproj" />
     <ProjectReference Include="..\AbdoZBakeryHRM.ComponentsLibrary\AbdoZBakeryHRM.ComponentsLibrary.csproj" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <Content Update="wwwroot\index.html">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
