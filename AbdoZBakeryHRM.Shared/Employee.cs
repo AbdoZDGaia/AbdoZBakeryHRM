@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AbdoZBakeryHRM.Shared
 {
@@ -40,5 +41,10 @@ namespace AbdoZBakeryHRM.Shared
 
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+
+        [NotMapped]
+        public byte[] ImageContent { get; set; }
+
+        public string ImageName { get; set; }
     }
 }

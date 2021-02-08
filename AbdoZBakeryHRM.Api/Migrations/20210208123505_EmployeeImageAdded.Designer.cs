@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AbdoZBakeryHRM.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191101211029_Initial")]
-    partial class Initial
+    [Migration("20210208123505_EmployeeImageAdded")]
+    partial class EmployeeImageAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,22 +97,29 @@ namespace AbdoZBakeryHRM.Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ExitDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("JobCategoryId")
                         .HasColumnType("int");
@@ -121,7 +128,9 @@ namespace AbdoZBakeryHRM.Api.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<double>("Latitude")
                         .HasColumnType("float");
@@ -160,7 +169,7 @@ namespace AbdoZBakeryHRM.Api.Migrations
                             City = "Brussels",
                             Comment = "Lorem Ipsum",
                             CountryId = 1,
-                            Email = "bethany@abdozbakery.com",
+                            Email = "bethany@abdozsbakery.com",
                             FirstName = "Bethany",
                             Gender = 1,
                             JobCategoryId = 1,
@@ -181,7 +190,7 @@ namespace AbdoZBakeryHRM.Api.Migrations
                             City = "Antwerp",
                             Comment = "Lorem Ipsum",
                             CountryId = 2,
-                            Email = "gill@abdozbakery.com",
+                            Email = "gill@abdozsbakery.com",
                             FirstName = "Gill",
                             Gender = 0,
                             JobCategoryId = 1,

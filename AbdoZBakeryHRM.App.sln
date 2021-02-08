@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZBakeryHRM.Api", "AbdoZ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZBakeryHRM.ComponentsLibrary", "AbdoZBakeryHRM.ComponentsLibrary\AbdoZBakeryHRM.ComponentsLibrary.csproj", "{44CBB0EC-5C6A-45EE-89E2-1E3634716C72}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZBakeryHRM.Client", "AbdoZBakeryHRM.Client\AbdoZBakeryHRM.Client.csproj", "{C52B8078-C463-4DED-A002-8BC813E16E1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZBakeryHRM.Server", "AbdoZBakeryHRM.Server\AbdoZBakeryHRM.Server.csproj", "{567FE40A-4DC3-4E98-BE10-96ECE58935FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{44CBB0EC-5C6A-45EE-89E2-1E3634716C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44CBB0EC-5C6A-45EE-89E2-1E3634716C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44CBB0EC-5C6A-45EE-89E2-1E3634716C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C52B8078-C463-4DED-A002-8BC813E16E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C52B8078-C463-4DED-A002-8BC813E16E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C52B8078-C463-4DED-A002-8BC813E16E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C52B8078-C463-4DED-A002-8BC813E16E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567FE40A-4DC3-4E98-BE10-96ECE58935FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567FE40A-4DC3-4E98-BE10-96ECE58935FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567FE40A-4DC3-4E98-BE10-96ECE58935FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567FE40A-4DC3-4E98-BE10-96ECE58935FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

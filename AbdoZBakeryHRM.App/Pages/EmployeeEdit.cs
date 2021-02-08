@@ -1,8 +1,10 @@
 ﻿using AbdoZBakeryHRM.App.Services;
 using AbdoZBakeryHRM.Shared;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +28,7 @@ namespace AbdoZBakeryHRM.App.Pages
         public Employee Employee { get; set; } = new Employee();
         public List<Country> Countries { get; set; } = new List<Country>();
         public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
+        public IReadOnlyList<IBrowserFile> selectedFiles { get; set; }
 
         protected string CountryId = string.Empty;
         protected string JobCategoryId = string.Empty;
@@ -58,6 +61,13 @@ namespace AbdoZBakeryHRM.App.Pages
             JobCategoryId = Employee.JobCategoryId.ToString();
         }
 
+        private void OnInputFileChange(InputFileChangeEventArgs e)
+        {
+            selectedFiles = e.GetMultipleFiles();
+            Message = $"{selectedFiles.Count} file(s) selected";
+            StateHasChanged();
+        }
+
         protected async Task HandleValidSubmit()
         {
             Saved = false;
@@ -66,6 +76,18 @@ namespace AbdoZBakeryHRM.App.Pages
 
             if (Employee.EmployeeId == 0) //new
             {
+                if (selectedFiles!= null)
+                {
+                    var file = selectedFiles[0];
+                    Stream stream = file.OpenReadStream();
+                    MemoryStream memoryStream = new MemoryStream();
+                    await stream.CopyToAsync(memoryStream);
+                    stream.Close();
+
+                    Employee.ImageContent = memoryStream.ToArray();
+                    Employee.ImageName = file.Name;
+                }
+
                 var addedEmployee = await EmployeeDataService.AddEmployee(Employee);
                 if (addedEmployee != null)
                 {
