@@ -23,6 +23,7 @@ namespace AbdoZBakeryHRM.Server
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddProtectedBrowserStorage();
 
             services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client =>
             {

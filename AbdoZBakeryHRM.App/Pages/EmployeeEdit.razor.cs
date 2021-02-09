@@ -2,6 +2,7 @@
 using AbdoZBakeryHRM.Shared;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.ProtectedBrowserStorage;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,8 @@ namespace AbdoZBakeryHRM.App.Pages
         public ICountryDataService CountryDataService { get; set; }
         [Inject]
         public IJobCategoryDataService JobCategoryDataService { get; set; }
+        [Inject]
+        public ProtectedLocalStorage LocalStorageService { get; set; }
 
         [Parameter]
         public string EmployeeId { get; set; }
@@ -47,7 +50,12 @@ namespace AbdoZBakeryHRM.App.Pages
 
             int.TryParse(EmployeeId, out var employeeId);
 
-            if (employeeId == 0) //new employee is being created
+            var savedEmployee = await LocalStorageService.GetAsync<Employee>("Employee");
+            if (savedEmployee != null && employeeId == 0)
+            {
+                Employee = savedEmployee;
+            }
+            else if (employeeId == 0) //new employee is being created
             {
                 //add some defaults
                 Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
@@ -66,6 +74,12 @@ namespace AbdoZBakeryHRM.App.Pages
             selectedFiles = e.GetMultipleFiles();
             Message = $"{selectedFiles.Count} file(s) selected";
             StateHasChanged();
+        }
+
+        protected async void TempSave()
+        {
+            await LocalStorageService.SetAsync("Employee", Employee);
+            NavigationManager.NavigateTo("/employeeoverview");
         }
 
         protected async Task HandleValidSubmit()
