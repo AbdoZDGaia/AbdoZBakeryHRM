@@ -1,4 +1,5 @@
 using System;
+using System.Net.Http;
 using AbdoZBakeryHRM.App.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,18 +26,20 @@ namespace AbdoZBakeryHRM.Server
             services.AddServerSideBlazor();
             services.AddProtectedBrowserStorage();
 
-            services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client =>
+            var abdozBakeryUri = new Uri("https://localhost:44340/");
+
+            void RegisterTypedClient<TClient, TImplementation>(Uri apiBaseUrl)
+                where TClient : class where TImplementation : class, TClient
             {
-                client.BaseAddress = new Uri("https://localhost:44340/");
-            });
-            services.AddHttpClient<ICountryDataService, CountryDataService>(client =>
-            {
-                client.BaseAddress = new Uri("https://localhost:44340/");
-            });
-            services.AddHttpClient<IJobCategoryDataService, JobCategoryDataService>(client =>
-            {
-                client.BaseAddress = new Uri("https://localhost:44340/");
-            });
+                services.AddHttpClient<TClient, TImplementation>(client =>
+                {
+                    client.BaseAddress = apiBaseUrl;
+                });
+            }
+
+            RegisterTypedClient<IEmployeeDataService, EmployeeDataService>(abdozBakeryUri);
+            RegisterTypedClient<ICountryDataService, CountryDataService>(abdozBakeryUri);
+            RegisterTypedClient<IJobCategoryDataService, JobCategoryDataService>(abdozBakeryUri);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
