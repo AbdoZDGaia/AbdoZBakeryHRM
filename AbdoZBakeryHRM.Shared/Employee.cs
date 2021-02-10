@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AbdoZBakeryHRM.Shared.Validations;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,6 +17,7 @@ namespace AbdoZBakeryHRM.Shared
         [StringLength(50, ErrorMessage = "Last name is too long.")]
         public string LastName { get; set; }
 
+        [BirthdayValidator(MinimumAge = 18)]
         public DateTime BirthDate { get; set; }
 
         [Required]
@@ -31,7 +33,7 @@ namespace AbdoZBakeryHRM.Shared
         public bool Smoker { get; set; }
         public MaritalStatus MaritalStatus { get; set; }
         public Gender Gender { get; set; }
-        [StringLength(1000,ErrorMessage ="Comment length can't exceed 1000 characters.")]
+        [StringLength(1000, ErrorMessage = "Comment length can't exceed 1000 characters.")]
         public string Comment { get; set; }
         public DateTime? JoinedDate { get; set; }
         public DateTime? ExitDate { get; set; }

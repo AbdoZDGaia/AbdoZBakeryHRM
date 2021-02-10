@@ -1,4 +1,5 @@
 ﻿using AbdoZBakeryHRM.Shared;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,12 +62,12 @@ namespace AbdoZBakeryHRM.App.Services
 
         public async Task<IEnumerable<Employee>> GetLongEmployeeList()
         {
-            return await _httpClient.GetFromJsonAsync<IEnumerable<Employee>>($"api/employee/long");
+            return await _httpClient.GetJsonAsync<IEnumerable<Employee>>($"api/employee/long");
         }
 
         public async Task<IEnumerable<Employee>> GetTakeLongEmployeeList(int startIndex, int count)
         {
-            return await _httpClient.GetFromJsonAsync<IEnumerable<Employee>>($"api/employee/long/{startIndex}/{count}");
+            return await _httpClient.GetJsonAsync<IEnumerable<Employee>>($"api/employee/long/{startIndex}/{count}");
         }
     }
 }
