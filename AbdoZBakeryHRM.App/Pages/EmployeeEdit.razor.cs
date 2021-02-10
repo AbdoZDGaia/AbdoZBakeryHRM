@@ -86,7 +86,7 @@ namespace AbdoZBakeryHRM.App.Pages
         {
             Saved = false;
             Employee.CountryId = int.Parse(CountryId);
-            Employee.JobCategoryId = int.Parse(JobCategoryId);
+            //Employee.JobCategoryId = int.Parse(JobCategoryId);
 
             if (Employee.EmployeeId == 0) //new
             {
