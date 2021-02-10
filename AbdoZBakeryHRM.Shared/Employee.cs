@@ -1,11 +1,12 @@
 ﻿using AbdoZBakeryHRM.Shared.Validations;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AbdoZBakeryHRM.Shared
 {
-    public class Employee
+    public class Employee : IValidatableObject
     {
         public int EmployeeId { get; set; }
 
@@ -48,5 +49,21 @@ namespace AbdoZBakeryHRM.Shared
         public byte[] ImageContent { get; set; }
 
         public string ImageName { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var errors = new List<ValidationResult>();
+
+            if (Latitude != 0 && Longitude == 0)
+            {
+                errors.Add(new ValidationResult("Longitude is required if latitude has a value", new[] { nameof(Longitude) }));
+            }
+            else if (Longitude != 0 && Latitude == 0)
+            {
+                errors.Add(new ValidationResult("Latitude is required if longitude has a value", new[] { nameof(Latitude) }));
+
+            }
+            return errors;
+        }
     }
 }
